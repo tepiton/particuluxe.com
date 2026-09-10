@@ -7,7 +7,7 @@ eleventyNavigation:
 
 # [{{ title }}](/)
 
-This site is served from [orobia.net](https://orobia.net/).
+This site is served from [particuluxe.com](https://particuluxe.com/).
 
 Replace this page with your own credits, colophon, and acknowledgments.
 
