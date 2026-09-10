@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ title or metadata.title }}</title>
+		<meta name="description" content="{{ description or metadata.description }}">
+		<meta property="og:title" content="{{ title or metadata.title }}">
+		<meta property="og:description" content="{{ description or metadata.description }}">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+		{% if metadata.image %}<meta property="og:image" content="{{ metadata.image }}">{% endif %}
+
+		<link rel="stylesheet" href="https://use.typekit.net/ztn6rcs.css">
+		<link rel="stylesheet" href="https://use.typekit.net/pgn7ley.css">
+		<style>{% include "css/index.css" %}</style>
+		<style>{% getBundle "css" %}</style>
+
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/" class="home-link">{{ metadata.title }}</a>
+
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+				{%- for entry in collections.all | eleventyNavigation %}
+					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+				{%- endfor %}
+				</ul>
+			</nav>
+
+			<div class="theme-switcher">
+				<button id="theme-toggle" class="theme-toggle" title="Change theme">◐</button>
+				<div id="theme-options" class="theme-options">
+					<a href="#" class="theme-option" data-theme="light">
+						<span class="theme-option-icon">✱</span>
+						<span>Light</span>
+					</a>
+					<a href="#" class="theme-option" data-theme="dark">
+						<span class="theme-option-icon">✻</span>
+						<span>Dark</span>
+					</a>
+					<a href="#" class="theme-option" data-theme="system">
+						<span class="theme-option-icon">◐</span>
+						<span>System</span>
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main id="main">
+			{{ content | safe }}
+		</main>
+
+		<footer>
+			<p><em>{{ metadata.author.name }}</em></p>
+		</footer>
+
+		<script type="module" src="/js/theme-switcher.js"></script>
+		<script type="module" src="{% getBundleFileUrl "js" %}"></script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+{
+	"name": "eleventy-chaptered-literary-base",
+	"version": "9.0.0",
+	"description": "An Eleventy starter for chaptered, long-form literary sites.",
+	"type": "module",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+		"start": "npx @11ty/eleventy --serve --port=8084 --quiet",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --port=8084 --quiet",
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/your-org/eleventy-chaptered-literary-base.git"
+	},
+	"author": {
+		"name": "Your Name",
+		"email": "youremailaddress@example.com",
+		"url": "https://example.com/"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=18"
+	},
+	"funding": {
+		"type": "opencollective",
+		"url": "https://opencollective.com/11ty"
+	},
+	"bugs": {
+		"url": "https://github.com/your-org/eleventy-chaptered-literary-base/issues"
+	},
+	"homepage": "https://github.com/your-org/eleventy-chaptered-literary-base#readme",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.2",
+		"@11ty/eleventy-img": "^6.0.4",
+		"@11ty/eleventy-navigation": "^1.0.4",
+		"@11ty/eleventy-plugin-rss": "^2.0.4",
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+		"cross-env": "^7.0.3",
+		"luxon": "^3.6.1",
+		"prismjs": "^1.30.0",
+		"zod": "^3.25.67",
+		"zod-validation-error": "^3.5.2"
+	},
+	"dependencies": {
+		"@zachleat/heading-anchors": "^1.0.5"
+	}
+}

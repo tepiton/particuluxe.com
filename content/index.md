@@ -1,0 +1,24 @@
+---
+layout: layouts/home.njk
+---
+<section class="hero">
+	<h1>{{ metadata.title }}</h1>
+	<p class="subtitle">{{ metadata.subtitle }}</p>
+	<p class="lede">{{ metadata.description }}</p>
+</section>
+
+{% if collections.chapters and collections.chapters.length %}
+<section>
+	<h2>Chapters</h2>
+	<ol class="chapter-list">
+	{% for chapter in collections.chapters %}
+		<li>
+			<a class="chapter-link" href="{{ chapter.url }}">
+				<strong>{{ chapter.data.order }}. {{ chapter.data.title }}</strong>
+				{% if chapter.data.dek %}<small>{{ chapter.data.dek }}</small>{% endif %}
+			</a>
+		</li>
+	{% endfor %}
+	</ol>
+</section>
+{% endif %}
